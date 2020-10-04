@@ -2,8 +2,14 @@
 
 class Converter
 {
-    public function arabicToRoman(int $int): string
+    public function arabicToRoman(int $arabic): string
     {
-        return 'I';
+        if ($arabic >= 5) {
+            $roman = 'V';
+        } else {
+            $roman = 'I';
+        }
+
+        return $roman;
     }
 }

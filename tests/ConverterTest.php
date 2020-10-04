@@ -4,14 +4,34 @@ use PHPUnit\Framework\TestCase;
 
 class ConverterTest extends TestCase
 {
-    public function test1yieldsI()
-    {
+
+    /**
+     * @dataProvider providerArabicToProvider
+     */
+    public function testArabictoRoman(
+        int $arabic,
+        string $roman
+    ) {
         // arrange
         $model = new Converter();
-        $expected = 'I';
+        $expected = $roman;
         // act
-        $actual = $model->arabicToRoman(1);
+        $actual = $model->arabicToRoman($arabic);
         // assert
         $this->assertEquals($expected, $actual);
+    }
+
+    function providerArabicToProvider(): array
+    {
+        return [
+            [
+                'arabic' => 1,
+                'roman' => 'I'
+            ],
+            [
+                'arabic' => 5,
+                'roman' => 'V'
+            ]
+        ];
     }
 }
