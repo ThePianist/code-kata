@@ -4,7 +4,9 @@ class Converter
 {
     public function arabicToRoman(int $arabic): string
     {
-        if ($arabic >= 500) {
+        if ($arabic >= 1000) {
+            $roman = 'M';
+        } elseif ($arabic >= 500) {
             $roman = 'D';
         } elseif ($arabic >= 100) {
             $roman = 'C';
