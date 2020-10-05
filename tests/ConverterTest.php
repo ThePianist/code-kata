@@ -43,6 +43,10 @@ class ConverterTest extends TestCase
             [
                 'arabic' => 100,
                 'roman' => 'C'
+            ],
+            [
+                'arabic' => 500,
+                'roman' => 'D'
             ]
         ];
     }
