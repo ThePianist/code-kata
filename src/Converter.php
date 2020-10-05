@@ -2,58 +2,27 @@
 
 class Converter
 {
-    public function arabicToRoman(int $arabic): string
+    public function arabicToRoman(int $number): string
     {
-        $roman = '';
+        $arabicToRoman = [
+            'M' => 1000,
+            'D' => 500,
+            'C' => 100,
+            'L' => 50,
+            'X' => 10,
+            'V' => 5,
+            'I' => 1
+        ];
 
-        if ($arabic > 999) {
-            while ($arabic > 999) {
-                $roman .= $roman . 'M';
-                $arabic -= 1000;
+        $result = '';
+
+        foreach ($arabicToRoman as $roman => $arabic) {
+            while ($number >= $arabic) {
+                $result .= $roman;
+                $number = $number - $arabic;
             }
         }
 
-        if ($arabic > 499) {
-            while ($arabic > 499) {
-                $roman .= $roman . 'D';
-                $arabic -= 500;
-            }
-        }
-
-        if ($arabic > 99) {
-            while ($arabic > 99) {
-                $roman .= $roman . 'C';
-                $arabic -= 100;
-            }
-        }
-
-        if ($arabic > 49) {
-            while ($arabic > 49) {
-                $roman .= $roman . 'L';
-                $arabic -= 50;
-            }
-        }
-
-        if ($arabic > 9) {
-            while ($arabic > 9) {
-                $roman .= $roman . 'X';
-                $arabic -= 10;
-            }
-        }
-
-        if ($arabic > 4) {
-            while ($arabic > 4) {
-                $roman .= $roman . 'V';
-                $arabic -= 5;
-            }
-        }
-
-        if ($arabic < 5) {
-            for ($i = $arabic; $i > 0; $i--) {
-                $roman = $roman . 'I';
-            }
-        }
-
-        return $roman;
+        return $result;
     }
 }
