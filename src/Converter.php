@@ -18,9 +18,12 @@ class Converter
 
         foreach ($arabicToRoman as $arabic => $roman) {
             while ($number >= $arabic) {
-                if (array_key_exists($number + 1, $arabicToRoman)) {
+                //var_dump(array_key_exists($number + 1, $arabicToRoman));
+                if ($arabic === ($number + 1)) {
                     $result = $roman . $arabicToRoman[$number + 1];
+                    //echo "arabic: " . $arabic . PHP_EOL;
                     $number = $number - $arabic;
+                    //echo $number . PHP_EOL;
                     break;
                 }
 

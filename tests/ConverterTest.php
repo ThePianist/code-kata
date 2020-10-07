@@ -24,7 +24,7 @@ class ConverterTest extends TestCase
     function providerArabicToProvider(): array
     {
         return [
-            [
+/*            [
                 'arabic' => 1,
                 'roman' => 'I'
             ],
@@ -59,6 +59,10 @@ class ConverterTest extends TestCase
             [
                 'arabic' => 4,
                 'roman' => 'IV'
+            ],*/
+            [
+                'arabic' => 9,
+                'roman' => 'IX'
             ]
         ];
     }
